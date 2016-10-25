@@ -262,9 +262,13 @@
     [self.holdValues addObject:self.txtValueOne.text];
     self.txtResultPanel.text = @"";
     NSArray *valueSet = [NSArray arrayWithObjects:self.txtValueOne.text, self.txtValueTwo.text, nil];    [self.calculator performWithDelay:seconds arithmeticOperation:self.selectedArithmeticOptionType forValues:valueSet withCompletionHandler:^(NSString * results){
+        if  ([results isEqualToString:@"Rijected"]){
+            UIAlertController *alertController = [UIAlertController alertControllerWithTitle:@"Operation Failed" message:@"Invalid Function Requested" preferredStyle:UIAlertControllerStyleAlert];
+            
+            UIAlertAction* ok = [UIAlertAction actionWithTitle:@"OK" style:UIAlertActionStyleDefault handler:nil];
+            [alertController addAction:ok];
+        }
         self.txtResultPanel.text = results;
     }];
-    
-    
 }
 @end

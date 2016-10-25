@@ -106,6 +106,7 @@
                 results = [self calculatePowForValueOne:valueOne toThePower:valueTwo];
                 break;
             default:
+                results = @"Rijected";
                 break;
         }
         
