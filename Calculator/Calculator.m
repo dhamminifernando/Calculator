@@ -78,8 +78,39 @@
 
 -(NSString *) divideExpForValueSetOne: (NSArray *) valueSetOne withValueSetTwo: (NSArray *) valueSetTwo{
     NSString *result;
-    
+    NSString *resultOne = [self calculatePowForValueOne:valueSetOne[0] toThePower:valueSetOne[1]];
+    NSString *resultTwo = [self calculatePowForValueOne:valueSetTwo[0] toThePower:valueSetTwo[1]];
+    result = [self divideValueOne:resultOne fromValueTwo:resultTwo];
     return result;
+}
+
+-(void) performWithDelay: (int) seconds arithmeticOperation: (ArithmeticOptionType) arithmeticOperation forValues: (NSArray *)valueSet withCompletionHandler:(void(^)(NSString *result)) completion{
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, seconds * NSEC_PER_SEC), dispatch_get_main_queue(), ^{
+        NSString *results=@"";
+        NSString *valueOne = valueSet[0];
+        NSString *valueTwo = valueSet[1];
+        switch (arithmeticOperation) {
+            case ArithmeticOptionAdd:
+                results = [self addValueOne:valueOne toValueTwo:valueTwo];
+                break;
+            case ArithmeticOptionSubtract:
+                results = [self subtractValueOne:valueOne fromValueTwo:valueTwo];
+                break;
+            case ArithmeticOptionMultiply:
+                results = [self multiplyValueOne:valueOne withValueTwo:valueTwo];
+                break;
+            case ArithmeticOptionDivide:
+                results = [self divideValueOne:valueOne fromValueTwo:valueTwo];
+                break;
+            case ArithmeticOptionPow:
+                results = [self calculatePowForValueOne:valueOne toThePower:valueTwo];
+                break;
+            default:
+                break;
+        }
+        
+        completion(results);
+    });
 }
 
 @end

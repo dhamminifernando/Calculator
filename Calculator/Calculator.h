@@ -38,6 +38,6 @@ typedef enum AdvanceArithmeticOptionType{
 -(NSString *) multiplyValueOne: (NSString *) valueOne withValueTwo: (NSString *) valueTwo;
 -(NSString *) divideValueOne: (NSString *) valueOne fromValueTwo: (NSString *) valueTwo;
 
--(void) performWithDelay: (int) seconds arithmeticOperation: (ArithmeticOptionType) arithmeticOperation forValues: (NSArray *)valueSet;
+-(void) performWithDelay: (int) seconds arithmeticOperation: (ArithmeticOptionType) arithmeticOperation forValues: (NSArray *)valueSet withCompletionHandler:(void(^)(NSString *result)) completion;
 
 @end

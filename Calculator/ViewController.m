@@ -18,6 +18,7 @@
 
 @property (nonatomic) BOOL shouldWaitOnNextExpression;
 @property (nonatomic) AdvanceArithmeticOptionType selectedAdvanceArithmeticOptionType;
+@property (nonatomic) ArithmeticOptionType selectedArithmeticOptionType;
 @property (strong, nonatomic) NSMutableArray *holdValues;
 
 @end
@@ -122,6 +123,7 @@
 }
 
 -(void) performCalculationForSelectedOperation: (NSInteger) result{
+    self.selectedArithmeticOptionType = result;
     switch (result) {
         case ArithmeticOptionAdd:
             self.txtResultPanel.text = [self.calculator addValueOne:self.txtValueOne.text toValueTwo:self.txtValueTwo.text];
@@ -253,5 +255,16 @@
     self.txtResultPanel.text = @"0.0";
     self.txtValueOne.text = @"";
     self.txtValueTwo.text = @"";
+}
+
+- (IBAction)perfomSelectedOperationWithDelay:(id)sender {
+    int seconds = [self.txtDelay.text intValue];
+    [self.holdValues addObject:self.txtValueOne.text];
+    self.txtResultPanel.text = @"";
+    NSArray *valueSet = [NSArray arrayWithObjects:self.txtValueOne.text, self.txtValueTwo.text, nil];    [self.calculator performWithDelay:seconds arithmeticOperation:self.selectedArithmeticOptionType forValues:valueSet withCompletionHandler:^(NSString * results){
+        self.txtResultPanel.text = results;
+    }];
+    
+    
 }
 @end

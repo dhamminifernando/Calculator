@@ -15,9 +15,12 @@
 
 @property (weak, nonatomic) IBOutlet UITextField *txtValueTwo;
 @property (weak, nonatomic) IBOutlet UIPickerView *functionPicker;
+@property (weak, nonatomic) IBOutlet UITextField *txtDelay;
 
 - (IBAction)executeAdvanceOption:(id)sender;
 - (IBAction)clearAll:(id)sender;
+
+- (IBAction)perfomSelectedOperationWithDelay:(id)sender;
 
 
 @end
