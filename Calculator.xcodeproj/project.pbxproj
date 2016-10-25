@@ -13,6 +13,8 @@
 		BE4063781DBFAF9A00A28017 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE4063761DBFAF9A00A28017 /* Main.storyboard */; };
 		BE40637A1DBFAF9B00A28017 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE4063791DBFAF9B00A28017 /* Assets.xcassets */; };
 		BE40637D1DBFAF9B00A28017 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE40637B1DBFAF9B00A28017 /* LaunchScreen.storyboard */; };
+		BE4063871DBFC26500A28017 /* Calculator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4063861DBFC26500A28017 /* Calculator.m */; };
+		BE40638A1DBFD92900A28017 /* ScientificCalculator.m in Sources */ = {isa = PBXBuildFile; fileRef = BE4063891DBFD92900A28017 /* ScientificCalculator.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,11 @@
 		BE4063791DBFAF9B00A28017 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE40637C1DBFAF9B00A28017 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE40637E1DBFAF9B00A28017 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BE4063851DBFC26500A28017 /* Calculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Calculator.h; sourceTree = "<group>"; };
+		BE4063861DBFC26500A28017 /* Calculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Calculator.m; sourceTree = "<group>"; };
+		BE4063881DBFD92900A28017 /* ScientificCalculator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ScientificCalculator.h; sourceTree = "<group>"; };
+		BE4063891DBFD92900A28017 /* ScientificCalculator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ScientificCalculator.m; sourceTree = "<group>"; };
+		BE40638E1DC010E300A28017 /* WithExponents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WithExponents.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +65,7 @@
 		BE40636C1DBFAF9A00A28017 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				BE4063841DBFBB6D00A28017 /* Classes */,
 				BE4063701DBFAF9A00A28017 /* AppDelegate.h */,
 				BE4063711DBFAF9A00A28017 /* AppDelegate.m */,
 				BE4063731DBFAF9A00A28017 /* ViewController.h */,
@@ -77,6 +85,18 @@
 				BE40636E1DBFAF9A00A28017 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BE4063841DBFBB6D00A28017 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				BE4063851DBFC26500A28017 /* Calculator.h */,
+				BE4063861DBFC26500A28017 /* Calculator.m */,
+				BE4063881DBFD92900A28017 /* ScientificCalculator.h */,
+				BE4063891DBFD92900A28017 /* ScientificCalculator.m */,
+				BE40638E1DC010E300A28017 /* WithExponents.h */,
+			);
+			name = Classes;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -150,6 +170,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE4063751DBFAF9A00A28017 /* ViewController.m in Sources */,
+				BE40638A1DBFD92900A28017 /* ScientificCalculator.m in Sources */,
+				BE4063871DBFC26500A28017 /* Calculator.m in Sources */,
 				BE4063721DBFAF9A00A28017 /* AppDelegate.m in Sources */,
 				BE40636F1DBFAF9A00A28017 /* main.m in Sources */,
 			);
@@ -300,6 +322,7 @@
 				BE4063831DBFAF9B00A28017 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
