@@ -123,21 +123,25 @@
 }
 
 -(void) performCalculationForSelectedOperation: (NSInteger) result{
-    self.selectedArithmeticOptionType = result;
     switch (result) {
         case ArithmeticOptionAdd:
+            self.selectedArithmeticOptionType = ArithmeticOptionAdd;
             self.txtResultPanel.text = [self.calculator addValueOne:self.txtValueOne.text toValueTwo:self.txtValueTwo.text];
             break;
         case ArithmeticOptionSubtract:
+            self.selectedArithmeticOptionType = ArithmeticOptionSubtract;
             self.txtResultPanel.text = [self.calculator subtractValueOne:self.txtValueOne.text fromValueTwo:self.txtValueTwo.text];
             break;
         case ArithmeticOptionMultiply:
+            self.selectedArithmeticOptionType = ArithmeticOptionMultiply;
             self.txtResultPanel.text = [self.calculator multiplyValueOne:self.txtValueOne.text withValueTwo:self.txtValueTwo.text];
             break;
         case ArithmeticOptionDivide:
+            self.selectedArithmeticOptionType = ArithmeticOptionDivide;
             self.txtResultPanel.text = [self.calculator divideValueOne:self.txtValueOne.text fromValueTwo:self.txtValueTwo.text];
             break;
         case ArithmeticOptionPow:
+            self.selectedArithmeticOptionType = ArithmeticOptionPow;
             self.txtResultPanel.text = [self.calculator calculatePowForValueOne:self.txtValueOne.text toThePower:self.txtValueTwo.text];
             break;
         default:
