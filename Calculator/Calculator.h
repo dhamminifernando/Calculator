@@ -8,16 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "WithExponents.h"
-
+/**
+ Basic arithmetic operations
+ **/
 typedef enum ArithmeticOptionType{
     ArithmeticOptionAdd,
     ArithmeticOptionSubtract,
     ArithmeticOptionMultiply,
     ArithmeticOptionDivide,
-    ArithmeticOptionPow
-    
+    ArithmeticOptionPow,
+    ArithmeticOptionSQRT
 }ArithmeticOptionType;
 
+/**
+ Advance arithmetic operations
+ **/
 typedef enum AdvanceArithmeticOptionType{
     ArithmeticOptionNone,
     ArithmeticOptionMultiplyEx,
